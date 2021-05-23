@@ -6,7 +6,7 @@
     "fix-parcel": "npx npm-force-resolutions && npm i && npm i",
     "start": "parcel index.html",
     "build": "npm run clear && parcel build index.html",
-    "lint":  "eslint src/**/*.js",
+    "lint": "eslint src/**/*.js",
     "format": "prettier --write src/**/*.js",
     "format:lint": "npm run format && npm run lint",
     "clear": "rimraf dist .parcel-cache"
@@ -20,6 +20,7 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.3",
     "babel-eslint": "^10.1.0",
     "babel-preset-nano-react-app": "^0.1.0",
     "eslint": "^7.27.0",
@@ -35,6 +36,22 @@
   "babel": {
     "presets": [
       "nano-react-app"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-proposal-class-properties",
+        {
+          "loose": true
+        },
+        "yt1"
+      ],
+      [
+        "@babel/plugin-proposal-private-methods",
+        {
+          "loose": true
+        },
+        "yt2"
+      ]
     ]
   }
 }
